@@ -1,0 +1,244 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+/* Navbar start */
+header {
+    height: 72px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px #00000029;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+header nav .logo {
+    font: normal normal 900 32px/39px 'Lato';
+    color: #023047;
+    user-select: none;
+}
+
+header nav .logo span {
+    color: #FB8500;
+    font: normal normal bold 32px/39px 'Lato';
+}
+
+header nav .add-note {
+    font: normal normal 900 12px/15px 'Lato';
+    text-transform: uppercase;
+    color: #023047;
+    border: 2px solid #023047;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+header nav .add-note:active {
+    color: #fff;
+    border: 2px solid #023047;
+    background-color: #023047;
+}
+
+/* navbar end */
+
+main {
+    margin-top: 24px;
+}
+
+/* card component start */
+
+main .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 235px);
+    grid-auto-rows: minmax(142px, auto);
+    gap: 31px;
+}
+
+main .card-container .card {
+    list-style: none;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px #00000029;
+    border-radius: 4px;
+    padding-inline: 16px;
+    /* overflow: hidden; */
+}
+
+main .card-container .card .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+main .card-container .card .card-head .title {
+    color: #023047;
+    font: normal normal 500 14px/19px 'Roboto';
+    flex: 1;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+main .card-container .card .card-head .title.disable {
+    display: none;
+}
+
+main .card-container .card .msg-body {
+    margin: 8px 0;
+    font: normal normal normal 14px/21px 'Roboto';
+    color: #333333;
+}
+
+main .card-container .card .text-body {
+    font: normal normal normal 14px/21px 'Roboto';
+    width: 100%;
+ 
+    border: none;
+    outline: none;
+    /* resize: none; */
+    resize: vertical;
+}
+main .card-container .card .msg-body.disable {
+    display: none;
+}
+
+main .card-container .card .card-head .drop-down {
+    position: relative;
+    user-select: none;
+
+}
+
+main .card-container .card .card-head .drop-down svg {
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select {
+    position: absolute;
+    width: 148px;
+    height: 91px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px #00000029;
+    border-radius: 4px;
+    font: normal normal normal 14px/17px 'Roboto';
+    color: #343434;
+    padding: 8px 0;
+    overflow: hidden;
+    display: none;
+}
+
+main .card-container .card .card-head .drop-down .color-select.enable {
+    display: block;
+}
+
+main .card-container .card .card-head .drop-down .color-select p {
+    margin-left: 12px;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors {
+    margin: 8px 0 21px 12px;
+    height: 12px;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px soild #CCCCCC;
+    background-color: #333333;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(1) {
+    background-color: #FFFFFF;
+    border-color: #CCCCCC;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(2) {
+    background-color: #CBD2D6;
+    border-color: #26465366;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(3) {
+    background-color: #CCE8E4;
+    border-color: #2A9D8F66;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(4) {
+    background-color: #FAF1DB;
+    border-color: #E9C46A;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(5) {
+    background-color: #FDE9D9;
+    border-color: #F4A26166;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .colors span:nth-child(6) {
+    background-color: #F9DCD5;
+    border-color: #E76F5166;
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .delete-btn {
+    padding: 5px 12px;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+main .card-container .card .card-head .drop-down .color-select .delete-btn:active {
+    color: #fff;
+    background-color: #023047;
+}
+
+/* main end */
+
+@media (max-width: 1024px) {
+    main .card-container .card .card-head .drop-down .color-select {
+        right: 0;
+    }
+}
+
+@media (max-width: 780px) {
+    .container {
+        margin: 0 10px;
+    }
+
+    main .card-container {
+        justify-content: center;
+    }
+}
+
+
+a {
+    color: #023047;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    z-index: 10;
+}
