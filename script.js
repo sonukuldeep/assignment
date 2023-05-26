@@ -62,17 +62,20 @@ function enableBtnTrigger(card) {
     const btn = card.querySelector('svg')
     const box = card.querySelector('.color-select ')
     btn.addEventListener('click', (event) => {
-        clearOldDropDown()
+        clearOldDropDown(event)
         box.classList.toggle('enable')
         cardContainer.setAttribute('data-dropdown-node', card.getAttribute('data-id'))
         event.stopPropagation()
     })
 }
 
-function clearOldDropDown () {
+function clearOldDropDown(event) {
     if (cardContainer.getAttribute('data-dropdown-node') !== '-1') {
         const activeNodeNumber = cardContainer.getAttribute('data-dropdown-node')
         const card = cardContainer.querySelector(`[data-id="${activeNodeNumber}"]`)
+        const activeDropDown = card.querySelector('div.color-select')
+        if(activeDropDown.contains(event.target))
+            return
         card.querySelector('.color-select').classList.remove('enable')
     }
 }
@@ -129,9 +132,9 @@ function inputs(card) {
 
 
 window.addEventListener('click', checkActive)
-function checkActive() {
+function checkActive(event) {
 
-    clearOldDropDown ()
+    clearOldDropDown(event)
 
     const activeNodeNumber = cardContainer.getAttribute('data-active-node')
     if (activeNodeNumber === "-1")

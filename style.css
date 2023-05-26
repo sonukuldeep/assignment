@@ -236,7 +236,7 @@ main .card-container .card .card-head .drop-down .color-select .delete-btn:activ
 
 a {
     color: #023047;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     bottom: 50px;
